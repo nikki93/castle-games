@@ -307,7 +307,7 @@ vec3 random3(vec3 c) {
 
 local vert = [[
     
-    extern vec2 scale;
+    extern mediump vec2 scale;
     
     vec4 position(mat4 transform_projection, vec4 vertex_position)
     {
@@ -332,7 +332,7 @@ float random(float v) {
 
     extern float time;
     extern float unit;
-    extern vec2 scale;
+    extern mediump vec2 scale;
     
     extern float flash;
 
@@ -548,7 +548,7 @@ float random(float v) {
   
   ]] , [[
   
-    extern vec2 scale;
+    extern mediump vec2 scale;
 
     attribute float VertexShade;
     
@@ -690,12 +690,12 @@ vec3 normal_sdf(vec3 pos) {
       float specular = pow(max(0.0, dot(reflect(eye, normal), light)), 3.0) * 1.0;
 
       
-      return vec4(vec3(1.0,0.1,0.0) * diffuse + vec3(0.9, 0.9, 0.9) * specular, 1.0) * float(hit > 0.0);
+      return vec4(vec3(1.0,0.1,0.0) * diffuse + vec3(0.9, 0.9, 0.9) * specular, 1.0) * float(hit > 0);
     }
   
   ]] , [[
   
-    extern vec2 scale;
+    extern mediump vec2 scale;
 
     attribute float VertexShade;
     
@@ -732,7 +732,7 @@ Shaders.borderShader = function()
   
   ]] , [[
   
-    extern vec2 scale;
+    extern mediump vec2 scale;
     varying vec3 pos;
     varying float shade;
 
